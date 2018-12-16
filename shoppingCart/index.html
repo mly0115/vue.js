@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>购物车</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="app" v-cloak>
+    <template v-if="List.length">
+      <shopping-car 
+        :products="product"
+        :indexs="indexs"
+        v-for="(product,indexs) in List"
+        ref="goods"
+        @change="getTotalPrices"
+      ></shopping-car>
+      <div>总价：￥ {{totalPrice}}</div>
+    </template>
+  </div>
+
+<script src="../vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
